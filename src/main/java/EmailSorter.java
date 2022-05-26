@@ -96,11 +96,15 @@ public class EmailSorter {
                 }
             }
 
-            // Prints the sorted emails
+            // Prints the total number of emails and the number of emails in each category
             System.out.println("We have sorted " + emails.length + " mails:");
+            // Recruitment@parkshark.com
             System.out.println(RecruitmentCounter + "  to recruitment");
+            // Spam@parkshark.com
             System.out.println(spamCounter + " to spam");
+            // Sales@parkshark.com
             System.out.println(SalesCounter + "  to sales");
+            // Reception@parkshark.com
             System.out.println(ReceptionCounter + "  to reception");
 
 
