@@ -35,10 +35,10 @@ public class EmailSorter {
         };
 
         // Emails will get sent to the following arrays after sorting
-        String[] recruitment = new String[emails.length];
-        String[] spam = new String[emails.length];
-        String[] sales = new String[emails.length];
-        String[] reception = new String[emails.length];
+        String[] recruitment = new String[emails.length];// Recruitment@parkshark.com
+        String[] spam = new String[emails.length];       // Spam@parkshark.com
+        String[] sales = new String[emails.length];      // Sales@parkshark.com
+        String[] reception = new String[emails.length];  // Reception@parkshark.com
 
         // Keeps track of the number of emails sent to each array
         int spamCounter = 0;
@@ -46,61 +46,64 @@ public class EmailSorter {
         int ReceptionCounter = 0;
         int RecruitmentCounter = 0;
 
-        // Sorts unsorted emails into recruitment, sales, reception and spam
-        for (int counter = 0; counter < emails.length; counter++) {
-            // Sorts the emails containing the word "promo" and "advertising" into the spam array
-            if (emails[counter].toLowerCase().contains("Promo".toLowerCase()) || emails[counter].toLowerCase().contains("Advertising".toLowerCase())) {
+        // If the email array is not empty, sort the emails
+        if (emails.length > 0) {
 
-                // Spam email is added to the spam array
-                spam[spamCounter] = emails[counter];
-                // Spam counter is incremented after adding an email to the spam array
-                spamCounter++;
-                // Deletes the email from the emails array after it has been sorted
-                emails = ArrayUtils.removeElement(emails, counter);
+            // Sorts unsorted emails into recruitment, sales, reception and spam
+            for (int counter = 0; counter < emails.length; counter++) {
+                // Converts email to lowercase then checks if the email contains the word "Promo" or "Advertising" which are also converted to lowercase
+                if (emails[counter].toLowerCase().contains("Promo".toLowerCase()) || emails[counter].toLowerCase().contains("Advertising".toLowerCase())) {
+
+                    // Spam email is added to the spam array
+                    spam[spamCounter] = emails[counter];
+                    // Spam counter is incremented after adding an email to the spam array
+                    spamCounter++;
+                    // Deletes the email from the emails array after it has been sorted
+                    emails = ArrayUtils.removeElement(emails, counter);
+                }
+
+                // Converts email to lowercase then checks if the email contains the word "CV" which is also converted to lowercase
+                else if (emails[counter].toLowerCase().contains("CV".toLowerCase())) {
+
+                    // Recruitment email is added to the recruitment array
+                    recruitment[RecruitmentCounter] = emails[counter];
+                    // Recruitment counter is incremented after adding an email to the spam array
+                    RecruitmentCounter++;
+                    // Deletes the email from the emails array after it has been sorted
+                    emails = ArrayUtils.removeElement(emails, counter);
+                }
+
+                // Converts email to lowercase then checks if the email contains the word "Proposal" which is also converted to lowercase
+                else if (emails[counter].toLowerCase().contains("Proposal".toLowerCase())) {
+
+                    // Sales email is added to the sales array
+                    sales[SalesCounter] = emails[counter];
+                    // Sales counter is incremented after adding an email to the spam array
+                    SalesCounter++;
+                    // Deletes the email from the emails array after it has been sorted
+                    emails = ArrayUtils.removeElement(emails, counter);
+                }
+
+                // If the emails do not contain "Promo", "Advertising", "CV" and "Proposal"
+                else {
+
+                    // Reception email is added to the reception array
+                    reception[ReceptionCounter] = emails[counter];
+                    // Reception counter is incremented after adding an email to the spam array
+                    ReceptionCounter++;
+                    // Deletes the email from the emails array after it has been sorted
+                    emails = ArrayUtils.removeElement(emails, counter);
+                }
             }
 
-            // Sorts the emails containing the word "CV" into the recruitment array
-            else if (emails[counter].toLowerCase().contains("CV".toLowerCase())) {
+            // Prints the sorted emails
+            System.out.println("We have sorted " + emails.length + " mails:");
+            System.out.println(RecruitmentCounter + "  to recruitment");
+            System.out.println(spamCounter + " to spam");
+            System.out.println(SalesCounter + "  to sales");
+            System.out.println(ReceptionCounter + "  to reception");
 
-                // Recruitment email is added to the recruitment array
-                recruitment[RecruitmentCounter] = emails[counter];
-                // Recruitment counter is incremented after adding an email to the spam array
-                RecruitmentCounter++;
-                // Deletes the email from the emails array after it has been sorted
-                emails = ArrayUtils.removeElement(emails, counter);
-            }
 
-            // Sorts the emails containing the word "Proposal" into the sales array
-            else if (emails[counter].toLowerCase().contains("Proposal".toLowerCase())) {
-
-                // Sales email is added to the sales array
-                sales[SalesCounter] = emails[counter];
-                // Sales counter is incremented after adding an email to the spam array
-                SalesCounter++;
-                // Deletes the email from the emails array after it has been sorted
-                emails = ArrayUtils.removeElement(emails, counter);
-            }
-
-            // Sorts the emails not containing "Promo", "Advertising", "CV" and "Proposal" into the reception array
-            else {
-
-                // reception email is added to the reception array
-                reception[ReceptionCounter] = emails[counter];
-                // Reception counter is incremented after adding an email to the spam array
-                ReceptionCounter++;
-                // Deletes the email from the emails array after it has been sorted
-                emails = ArrayUtils.removeElement(emails, counter);
-            }
         }
-
-        // Prints the sorted emails
-        System.out.println("We have sorted " + emails.length + " mails:");
-        System.out.println(RecruitmentCounter + "  to recruitment");
-        System.out.println(spamCounter + " to spam");
-        System.out.println(SalesCounter + "  to sales");
-        System.out.println(ReceptionCounter + "  to reception");
-
-
     }
 }
-
