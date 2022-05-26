@@ -53,12 +53,14 @@ public class EmailSorter {
 
                 spam[spamCounter] = emails[counter];
                 spamCounter++;
+                //deletes the email from the emails array after it has been sorted
                 emails = ArrayUtils.removeElement(emails, counter);
             }
             // Sorts the emails containing the word "CV" into the recruitment array
             else if (emails[counter].toLowerCase().contains("CV".toLowerCase())) {
                 recruitment[RecruitmentCounter] = emails[counter];
                 RecruitmentCounter++;
+                //deletes the email from the emails array after it has been sorted
                 emails = ArrayUtils.removeElement(emails, counter);
 
 
@@ -68,6 +70,7 @@ public class EmailSorter {
 
                 sales[SalesCounter] = emails[counter];
                 SalesCounter++;
+                //deletes the email from the emails array after it has been sorted
                 emails = ArrayUtils.removeElement(emails, counter);
 
             }
@@ -75,6 +78,7 @@ public class EmailSorter {
             else {
                 reception[ReceptionCounter] = emails[counter];
                 ReceptionCounter++;
+                //deletes the email from the emails array after it has been sorted
                 emails = ArrayUtils.removeElement(emails, counter);
             }
         }
