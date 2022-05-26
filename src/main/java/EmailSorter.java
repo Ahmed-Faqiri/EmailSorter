@@ -70,8 +70,8 @@ public class EmailSorter {
                 emails = ArrayUtils.removeElement(emails, counter);
             }
 
-            // Sorts the emails containing the word "proposal" into the proposal array
-            else if (emails[counter].toLowerCase().contains("proposal".toLowerCase())) {
+            // Sorts the emails containing the word "Proposal" into the sales array
+            else if (emails[counter].toLowerCase().contains("Proposal".toLowerCase())) {
 
                 // Sales email is added to the sales array
                 sales[SalesCounter] = emails[counter];
@@ -81,7 +81,7 @@ public class EmailSorter {
                 emails = ArrayUtils.removeElement(emails, counter);
             }
 
-            // Sorts the emails not containing "Promo", "Advertising", "CV" and "proposal" into the reception array
+            // Sorts the emails not containing "Promo", "Advertising", "CV" and "Proposal" into the reception array
             else {
 
                 // reception email is added to the reception array
@@ -95,10 +95,10 @@ public class EmailSorter {
 
         // Prints the sorted emails
         System.out.println("We have sorted " + emails.length + " mails:");
-        System.out.println(RecruitmentCounter + " to recruitment");
+        System.out.println(RecruitmentCounter + "  to recruitment");
         System.out.println(spamCounter + " to spam");
-        System.out.println(SalesCounter + " to sales");
-        System.out.println(ReceptionCounter + " to reception");
+        System.out.println(SalesCounter + "  to sales");
+        System.out.println(ReceptionCounter + "  to reception");
 
 
     }
