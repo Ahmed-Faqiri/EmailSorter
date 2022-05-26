@@ -3,7 +3,7 @@ import org.apache.commons.lang3.ArrayUtils;
 public class EmailSorter {
     public static void main(String[] args) {
 
-        // unsorted array of emails
+        // Unsorted array of emails
         String[] emails = {
 
                 // Promotions/Ads
