@@ -49,36 +49,46 @@ public class EmailSorter {
         // Sorts unsorted emails into recruitment, sales, reception and spam
         for (int counter = 0; counter < emails.length; counter++) {
             // Sorts the emails containing the word "promo" and "advertising" into the spam array
-            if (emails[counter].toLowerCase().contains("Promo".toLowerCase()) || (emails[counter].toLowerCase().contains("Advertising".toLowerCase()))) {
+            if (emails[counter].toLowerCase().contains("Promo".toLowerCase()) || emails[counter].toLowerCase().contains("Advertising".toLowerCase())) {
 
+                // Spam email is added to the spam array
                 spam[spamCounter] = emails[counter];
+                // Spam counter is incremented after adding an email to the spam array
                 spamCounter++;
-                //deletes the email from the emails array after it has been sorted
+                // Deletes the email from the emails array after it has been sorted
                 emails = ArrayUtils.removeElement(emails, counter);
             }
+
             // Sorts the emails containing the word "CV" into the recruitment array
             else if (emails[counter].toLowerCase().contains("CV".toLowerCase())) {
+
+                // Recruitment email is added to the recruitment array after adding an email to the spam array
                 recruitment[RecruitmentCounter] = emails[counter];
+                // Recruitment counter is incremented
                 RecruitmentCounter++;
-                //deletes the email from the emails array after it has been sorted
+                // Deletes the email from the emails array after it has been sorted
                 emails = ArrayUtils.removeElement(emails, counter);
-
-
             }
+
             // Sorts the emails containing the word "proposal" into the proposal array
             else if (emails[counter].toLowerCase().contains("proposal".toLowerCase())) {
 
+                // Sales email is added to the sales array after adding an email to the spam array
                 sales[SalesCounter] = emails[counter];
+                // Sales counter is incremented
                 SalesCounter++;
-                //deletes the email from the emails array after it has been sorted
+                // Deletes the email from the emails array after it has been sorted
                 emails = ArrayUtils.removeElement(emails, counter);
-
             }
+
             // Sorts the emails not containing "Promo", "Advertising", "CV" and "proposal" into the reception array
             else {
+
+                // reception email is added to the reception array
                 reception[ReceptionCounter] = emails[counter];
+                // Reception counter is incremented after adding an email to the spam array
                 ReceptionCounter++;
-                //deletes the email from the emails array after it has been sorted
+                // Deletes the email from the emails array after it has been sorted
                 emails = ArrayUtils.removeElement(emails, counter);
             }
         }
