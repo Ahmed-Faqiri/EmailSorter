@@ -81,8 +81,8 @@ public class EmailSorter {
 
         // Prints the sorted emails
         System.out.println("We have sorted " + emails.length + " mails:");
-        System.out.println(spamCounter + " to spam");
         System.out.println(RecruitmentCounter + " to recruitment");
+        System.out.println(spamCounter + " to spam");
         System.out.println(SalesCounter + " to sales");
         System.out.println(ReceptionCounter + " to reception");
 
