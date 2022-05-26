@@ -62,9 +62,9 @@ public class EmailSorter {
             // Sorts the emails containing the word "CV" into the recruitment array
             else if (emails[counter].toLowerCase().contains("CV".toLowerCase())) {
 
-                // Recruitment email is added to the recruitment array after adding an email to the spam array
+                // Recruitment email is added to the recruitment array
                 recruitment[RecruitmentCounter] = emails[counter];
-                // Recruitment counter is incremented
+                // Recruitment counter is incremented after adding an email to the spam array
                 RecruitmentCounter++;
                 // Deletes the email from the emails array after it has been sorted
                 emails = ArrayUtils.removeElement(emails, counter);
@@ -73,9 +73,9 @@ public class EmailSorter {
             // Sorts the emails containing the word "proposal" into the proposal array
             else if (emails[counter].toLowerCase().contains("proposal".toLowerCase())) {
 
-                // Sales email is added to the sales array after adding an email to the spam array
+                // Sales email is added to the sales array
                 sales[SalesCounter] = emails[counter];
-                // Sales counter is incremented
+                // Sales counter is incremented after adding an email to the spam array
                 SalesCounter++;
                 // Deletes the email from the emails array after it has been sorted
                 emails = ArrayUtils.removeElement(emails, counter);
