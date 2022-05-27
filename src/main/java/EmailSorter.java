@@ -6,7 +6,7 @@ public class EmailSorter {
         // Unsorted array of emails
         String[] emails = {
 
-                // Promotions/Ads
+                // Promotions/Advertising
                 "Promo 10% off on all shoes Use code: PROMO10 - FootLocker1@mail.com",
                 "Promo 10% off on all shoes Use code: PROMO10 - FootLocker2@mail.com",
                 "Promo 10% off on all shoes Use code: PROMO10 - FootLocker3@mail.com",
