@@ -108,7 +108,7 @@ public class EmailSorter {
             System.out.println(ReceptionCounter + "  to reception");
 
 
-        }else{
+        } else {
             // Prints an error message upon entering empty list
             System.err.println("Email list is empty!");
             // Forces program to stop
