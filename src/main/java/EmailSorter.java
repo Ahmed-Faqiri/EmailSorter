@@ -49,7 +49,7 @@ public class EmailSorter {
         // If the email array is not empty, sort the emails
         if (emails.length > 0) {
 
-            // Sorts unsorted emails into recruitment, sales, reception and spam
+            //  For loop to sort unsorted emails into recruitment, sales, reception and spam
             for (int counter = 0; counter < emails.length; counter++) {
                 // Converts email to lowercase then checks if the email contains the word "Promo" or "Advertising" which are also converted to lowercase
                 if (emails[counter].toLowerCase().contains("Promo".toLowerCase()) || emails[counter].toLowerCase().contains("Advertising".toLowerCase())) {
