@@ -107,9 +107,9 @@ public class EmailSorter {
             // Reception@parkshark.com
             System.out.println(ReceptionCounter + "  to reception");
 
-
+          // if the array list given is empty
         } else {
-            // Prints an error message upon entering empty list
+            // Prints an error message upon giving an empty list
             System.err.println("Email list is empty!");
             // Forces program to stop
             System.exit(-1);
