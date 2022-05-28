@@ -51,7 +51,7 @@ public class EmailSorter {
 
             // For loop to sort unsorted emails into recruitment, sales, reception and spam
             for (int forLoopCounter = 0; forLoopCounter < emails.length; forLoopCounter++) {
-                // Converts email to lowercase then checks if the email contains the word "Promo" or "Advertising"
+                // Converts email to lowercase then checks if the email contains the word "promo" or "advertising"
                 if (emails[forLoopCounter].toLowerCase().contains("promo") || emails[forLoopCounter].toLowerCase().contains("advertising")) {
 
                     // Spam email is added to the spam array
