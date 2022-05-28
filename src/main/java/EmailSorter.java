@@ -51,7 +51,7 @@ public class EmailSorter {
 
             // For loop to sort unsorted emails into recruitment, sales, reception and spam
             for (int forLoopCounter = 0; forLoopCounter < emails.length; forLoopCounter++) {
-                // Converts email to lowercase then checks if the email contains the word "Promo" or "Advertising" which are also converted to lowercase
+                // Converts email to lowercase then checks if the email contains the word "Promo" or "Advertising"
                 if (emails[forLoopCounter].toLowerCase().contains("promo") || emails[forLoopCounter].toLowerCase().contains("advertising")) {
 
                     // Spam email is added to the spam array
@@ -62,7 +62,7 @@ public class EmailSorter {
                     emails = ArrayUtils.removeElement(emails, forLoopCounter);
                 }
 
-                // Converts email to lowercase then checks if the email contains the word "CV" which is also converted to lowercase
+                // Converts email to lowercase then checks if the email contains the word "cv"
                 else if (emails[forLoopCounter].toLowerCase().contains("cv")) {
 
                     // Recruitment email is added to the recruitment array
@@ -73,7 +73,7 @@ public class EmailSorter {
                     emails = ArrayUtils.removeElement(emails, forLoopCounter);
                 }
 
-                // Converts email to lowercase then checks if the email contains the word "Proposal" which is also converted to lowercase
+                // Converts email to lowercase then checks if the email contains the word "proposal"
                 else if (emails[forLoopCounter].toLowerCase().contains("proposal")) {
 
                     // Sales email is added to the sales array
@@ -84,7 +84,7 @@ public class EmailSorter {
                     emails = ArrayUtils.removeElement(emails, forLoopCounter);
                 }
 
-                // If the emails do not contain "Promo", "Advertising", "CV" and "Proposal"
+                // If the emails do not contain "promo", "advertising", "cv" and "proposal"
                 else {
 
                     // Reception email is added to the reception array
