@@ -1,5 +1,8 @@
 import org.apache.commons.lang3.ArrayUtils;
 
+import java.time.LocalTime;
+import java.util.Scanner;
+
 public class EmailSorter {
     public static void main(String[] args) {
 
@@ -39,6 +42,10 @@ public class EmailSorter {
         String[] spam = new String[emails.length];       // Spam@parkshark.com
         String[] sales = new String[emails.length];      // Sales@parkshark.com
         String[] reception = new String[emails.length];  // Reception@parkshark.com
+        String answer;
+        LocalTime currentTime = LocalTime.now();
+        LocalTime endOfTheDay = LocalTime.of(15, 30);
+        Scanner input = new Scanner(System.in);
 
         // Keeps track of the number of emails sent to each array
         int recruitmentCounter = 0;
@@ -113,6 +120,44 @@ public class EmailSorter {
             System.err.println("Email list is empty!");
             // Forces program to stop
             System.exit(-1);
+        }
+        if (currentTime.isAfter(endOfTheDay)) {
+
+            System.out.println("Would you like to print total emails sorted from the entire day? Y/N");
+            answer = input.next();
+
+            for (int checker = 0; checker < 4; checker++) {
+
+                if (answer.toLowerCase().contains("y") || (answer.toLowerCase().contains("yes"))){
+
+                    // Prints the total number of emails from the entire day
+                    System.out.println("We have sorted " + emails.length + " mails:");
+                    // Recruitment@parkshark.com
+                    System.out.println(recruitmentCounter + "  to recruitment");
+                    // Spam@parkshark.com
+                    System.out.println(spamCounter + " to spam");
+                    // Sales@parkshark.com
+                    System.out.println(salesCounter + "  to sales");
+                    // Reception@parkshark.com
+                    System.out.println(receptionCounter + "  to reception");
+
+                    System.out.println("Thank you for using EmailSorter");
+
+                    break;
+
+                }else if(answer.toLowerCase().contains("n") || (answer.toLowerCase().contains("no"))){
+                    System.out.println("Thank you for using EmailSorter");
+                    break;
+                }else{
+                    System.out.println("INCORRECT INPUT, TRY AGAIN " + checker + "/3");
+                    System.out.println("Would you like to print total emails sorted from the entire day? Y/N");
+                    answer = input.next();
+                    if(checker==3){
+                        System.out.println("Too many wrong inputs.");
+                        break;
+                    }
+                }
+            }
         }
     }
 }
