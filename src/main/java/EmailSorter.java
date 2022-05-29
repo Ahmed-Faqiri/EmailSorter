@@ -53,6 +53,13 @@ public class EmailSorter {
         int salesCounter = 0;
         int receptionCounter = 0;
 
+        // keeps track of total
+        int totalRecruitmentCounter = 0;
+        int totalSpamCounter = 0;
+        int totalSalesCounter = 0;
+        int totalReceptionCounter = 0;
+        int totalEmails = 0;
+
         // If the email array is not empty, sort the emails
         if (emails.length > 0) {
 
@@ -105,14 +112,19 @@ public class EmailSorter {
 
             // Prints the total number of emails and the number of emails in each category
             System.out.println("We have sorted " + emails.length + " mails:");
+            totalEmails = totalEmails + emails.length;
             // Recruitment@parkshark.com
             System.out.println(recruitmentCounter + "  to recruitment");
+            totalRecruitmentCounter = totalRecruitmentCounter + recruitmentCounter;
             // Spam@parkshark.com
             System.out.println(spamCounter + " to spam");
+            totalSpamCounter = totalSpamCounter + spamCounter;
             // Sales@parkshark.com
             System.out.println(salesCounter + "  to sales");
+            totalSalesCounter = totalSalesCounter + salesCounter;
             // Reception@parkshark.com
             System.out.println(receptionCounter + "  to reception");
+            totalReceptionCounter = totalReceptionCounter + receptionCounter;
         }
         // if the array list given is empty
         else {
@@ -131,15 +143,11 @@ public class EmailSorter {
                 if (answer.toLowerCase().contains("y") || (answer.toLowerCase().contains("yes"))){
 
                     // Prints the total number of emails from the entire day
-                    System.out.println("We have sorted " + emails.length + " mails:");
-                    // Recruitment@parkshark.com
-                    System.out.println(recruitmentCounter + "  to recruitment");
-                    // Spam@parkshark.com
-                    System.out.println(spamCounter + " to spam");
-                    // Sales@parkshark.com
-                    System.out.println(salesCounter + "  to sales");
-                    // Reception@parkshark.com
-                    System.out.println(receptionCounter + "  to reception");
+                    System.out.println("We have sorted " + totalEmails + " mails in total:");
+                    System.out.println(totalRecruitmentCounter + "  to recruitment in total");
+                    System.out.println(totalSpamCounter + " to spam in total");
+                    System.out.println(totalSalesCounter + "  to sales in total");
+                    System.out.println(totalReceptionCounter + "  to reception in total");
 
                     System.out.println("Thank you for using EmailSorter");
 
