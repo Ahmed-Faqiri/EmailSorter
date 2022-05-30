@@ -1,4 +1,5 @@
 import org.apache.commons.lang3.ArrayUtils;
+
 import java.time.LocalTime;
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ public class EmailSorter {
                 "Advertising Get a free pair of socks for the first week of every month. Use code: FREEPAIR - Scam3@mail.com",
                 "Advertising Get a free pair of socks for the first week of every month. Use code: FREEPAIR - Scam4@mail.com",
                 "Advertising Get a free pair of socks for the first week of every month. Use code: FREEPAIR - Scam5@mail.com",
-                 // Candidates for open work positions
+                // Candidates for open work positions
                 "Candidate for the position of developer you will find my CV attached to this email. - bob1@mail.com",
                 "Candidate for the position of developer you will find my CV attached to this email. - bob2@mail.com",
                 "Candidate for the position of developer you will find my CV attached to this email. - bob3@mail.com",
@@ -70,8 +71,8 @@ public class EmailSorter {
                     // Deletes the email from the emails array after it has been sorted
                     emails = ArrayUtils.removeElement(emails, forLoopCounter);
 
-                // Converts email to lowercase then checks if the email contains the word "cv"
-                }else if (emails[forLoopCounter].toLowerCase().contains("cv")) {
+                    // Converts email to lowercase then checks if the email contains the word "cv"
+                } else if (emails[forLoopCounter].toLowerCase().contains("cv")) {
 
                     // Recruitment email is added to the recruitment array
                     recruitment[recruitmentCounter] = emails[forLoopCounter];
@@ -80,8 +81,8 @@ public class EmailSorter {
                     // Deletes the email from the emails array after it has been sorted
                     emails = ArrayUtils.removeElement(emails, forLoopCounter);
 
-                // Converts email to lowercase then checks if the email contains the word "proposal"
-                }else if (emails[forLoopCounter].toLowerCase().contains("proposal")) {
+                    // Converts email to lowercase then checks if the email contains the word "proposal"
+                } else if (emails[forLoopCounter].toLowerCase().contains("proposal")) {
 
                     // Sales email is added to the sales array
                     sales[salesCounter] = emails[forLoopCounter];
@@ -90,8 +91,8 @@ public class EmailSorter {
                     // Deletes the email from the emails array after it has been sorted
                     emails = ArrayUtils.removeElement(emails, forLoopCounter);
 
-                 // If the emails do not contain "promo", "advertising", "cv" and "proposal"
-                }else {
+                    // If the emails do not contain "promo", "advertising", "cv" and "proposal"
+                } else {
 
                     // Reception email is added to the reception array
                     reception[receptionCounter] = emails[forLoopCounter];
@@ -118,6 +119,12 @@ public class EmailSorter {
             totalSpamCounter = totalSpamCounter + spamCounter;
             totalSalesCounter = totalSalesCounter + salesCounter;
             totalReceptionCounter = totalReceptionCounter + receptionCounter;
+
+            // Category counters get reset
+            recruitmentCounter = 0;
+            spamCounter = 0;
+            salesCounter = 0;
+            receptionCounter = 0;
         }
         // If the array list given is empty
         else {
@@ -139,7 +146,7 @@ public class EmailSorter {
             for (int checker = 0; checker < 4; checker++) {
 
                 // If user input to lowercase contains 'yes' or 'y'
-                if (answer.toLowerCase().contains("y") || (answer.toLowerCase().contains("yes"))){
+                if (answer.toLowerCase().contains("y") || (answer.toLowerCase().contains("yes"))) {
 
                     // Prints the total number of emails from the entire day
                     System.out.println("We have sorted " + totalEmails + " mails in total:");
@@ -152,16 +159,16 @@ public class EmailSorter {
                     // Exits the for-loop
                     break;
 
-                // If user input to lowercase contains 'n' or 'no'
-                }else if(answer.toLowerCase().contains("n") || (answer.toLowerCase().contains("no"))){
+                    // If user input to lowercase contains 'n' or 'no'
+                } else if (answer.toLowerCase().contains("n") || (answer.toLowerCase().contains("no"))) {
 
                     // Prints a goodbye message
                     System.out.println("Thank you for using EmailSorter");
                     // Exits the for-loop
                     break;
 
-                // If user input is not 'yes','y','n' or 'no', it gives them 3 extra chances for a correct input
-                }else{
+                    // If user input is not 'yes','y','n' or 'no', it gives them 3 extra chances for a correct input
+                } else {
 
                     // Prints a notification for the user and shows them how many tries they have left
                     System.out.println("INCORRECT INPUT, TRY AGAIN " + checker + "/3");
@@ -171,7 +178,7 @@ public class EmailSorter {
                     answer = input.next();
 
                     // If the user had 3 incorrect inputs
-                    if(checker==3){
+                    if (checker == 3) {
 
                         // Prints a message to notify user of too wrong inputs
                         System.err.println("Too many wrong inputs!");
