@@ -1,5 +1,4 @@
 import org.apache.commons.lang3.ArrayUtils;
-
 import java.time.LocalTime;
 import java.util.Scanner;
 
@@ -8,7 +7,6 @@ public class EmailSorter {
 
         // Unsorted array of emails
         String[] emails = {
-
                 // Promotions/Advertising
                 "Promo 10% off on all shoes Use code: PROMO10 - FootLocker1@mail.com",
                 "Promo 10% off on all shoes Use code: PROMO10 - FootLocker2@mail.com",
@@ -20,23 +18,19 @@ public class EmailSorter {
                 "Advertising Get a free pair of socks for the first week of every month. Use code: FREEPAIR - Scam3@mail.com",
                 "Advertising Get a free pair of socks for the first week of every month. Use code: FREEPAIR - Scam4@mail.com",
                 "Advertising Get a free pair of socks for the first week of every month. Use code: FREEPAIR - Scam5@mail.com",
-
-                // Candidates for open work positions
+                 // Candidates for open work positions
                 "Candidate for the position of developer you will find my CV attached to this email. - bob1@mail.com",
                 "Candidate for the position of developer you will find my CV attached to this email. - bob2@mail.com",
                 "Candidate for the position of developer you will find my CV attached to this email. - bob3@mail.com",
                 "Candidate for the position of developer you will find my CV attached to this email. - bob4@mail.com",
-
                 // Business emails
                 "Business proposal get in touch for more information. - business1@mail.com",
                 "Business proposal get in touch for more information. - business2@mail.com",
                 "Business proposal get in touch for more information. - business3@mail.com",
-
                 // Uncategorized emails
                 "How do I order a pair of socks? - jim1@mail.com"
 
         };
-
         // Emails will get sent to the following arrays after sorting
         String[] recruitment = new String[emails.length];// Recruitment@parkshark.com
         String[] spam = new String[emails.length];       // Spam@parkshark.com
@@ -44,7 +38,8 @@ public class EmailSorter {
         String[] reception = new String[emails.length];  // Reception@parkshark.com
         String answer;
         LocalTime currentTime = LocalTime.now();
-        LocalTime endOfTheDay = LocalTime.of(15, 30);
+        LocalTime endOfTheDay = LocalTime.of(9, 0);
+        LocalTime startOfTheDay = LocalTime.of(8,0);
         Scanner input = new Scanner(System.in);
 
         // Keeps track of the number of emails sent to each array
@@ -74,10 +69,9 @@ public class EmailSorter {
                     spamCounter++;
                     // Deletes the email from the emails array after it has been sorted
                     emails = ArrayUtils.removeElement(emails, forLoopCounter);
-                }
 
                 // Converts email to lowercase then checks if the email contains the word "cv"
-                else if (emails[forLoopCounter].toLowerCase().contains("cv")) {
+                }else if (emails[forLoopCounter].toLowerCase().contains("cv")) {
 
                     // Recruitment email is added to the recruitment array
                     recruitment[recruitmentCounter] = emails[forLoopCounter];
@@ -85,10 +79,9 @@ public class EmailSorter {
                     recruitmentCounter++;
                     // Deletes the email from the emails array after it has been sorted
                     emails = ArrayUtils.removeElement(emails, forLoopCounter);
-                }
 
                 // Converts email to lowercase then checks if the email contains the word "proposal"
-                else if (emails[forLoopCounter].toLowerCase().contains("proposal")) {
+                }else if (emails[forLoopCounter].toLowerCase().contains("proposal")) {
 
                     // Sales email is added to the sales array
                     sales[salesCounter] = emails[forLoopCounter];
@@ -96,10 +89,9 @@ public class EmailSorter {
                     salesCounter++;
                     // Deletes the email from the emails array after it has been sorted
                     emails = ArrayUtils.removeElement(emails, forLoopCounter);
-                }
 
-                // If the emails do not contain "promo", "advertising", "cv" and "proposal"
-                else {
+                 // If the emails do not contain "promo", "advertising", "cv" and "proposal"
+                }else {
 
                     // Reception email is added to the reception array
                     reception[receptionCounter] = emails[forLoopCounter];
@@ -109,37 +101,42 @@ public class EmailSorter {
                     emails = ArrayUtils.removeElement(emails, forLoopCounter);
                 }
             }
-
             // Prints the total number of emails and the number of emails in each category
             System.out.println("We have sorted " + emails.length + " mails:");
-            totalEmails = totalEmails + emails.length;
             // Recruitment@parkshark.com
             System.out.println(recruitmentCounter + "  to recruitment");
-            totalRecruitmentCounter = totalRecruitmentCounter + recruitmentCounter;
             // Spam@parkshark.com
             System.out.println(spamCounter + " to spam");
-            totalSpamCounter = totalSpamCounter + spamCounter;
             // Sales@parkshark.com
             System.out.println(salesCounter + "  to sales");
-            totalSalesCounter = totalSalesCounter + salesCounter;
             // Reception@parkshark.com
             System.out.println(receptionCounter + "  to reception");
+
+            // Saves how many emails were sorted in total and in each category
+            totalEmails = totalEmails + emails.length;
+            totalRecruitmentCounter = totalRecruitmentCounter + recruitmentCounter;
+            totalSpamCounter = totalSpamCounter + spamCounter;
+            totalSalesCounter = totalSalesCounter + salesCounter;
             totalReceptionCounter = totalReceptionCounter + receptionCounter;
         }
-        // if the array list given is empty
+        // If the array list given is empty
         else {
             // Prints an error message upon giving an empty list
-            System.err.println("Email list is empty!");
+            System.err.println("Email list cannot be empty!");
             // Forces program to stop
             System.exit(-1);
         }
+        // If the current local time is after 15:30 and before 8:00 AM
         if (currentTime.isAfter(endOfTheDay)) {
-
+            // Prints out a message if the user would like to print total amount of emails from the entire day
             System.out.println("Would you like to print total emails sorted from the entire day? Y/N");
+            //asks user for an input 'yes', 'y', 'n' or 'no'
             answer = input.next();
 
+            // For loop that lets the user retry their answer
             for (int checker = 0; checker < 4; checker++) {
 
+                // If user input to lowercase contains 'yes' or 'y'
                 if (answer.toLowerCase().contains("y") || (answer.toLowerCase().contains("yes"))){
 
                     // Prints the total number of emails from the entire day
@@ -148,20 +145,32 @@ public class EmailSorter {
                     System.out.println(totalSpamCounter + " to spam in total");
                     System.out.println(totalSalesCounter + "  to sales in total");
                     System.out.println(totalReceptionCounter + "  to reception in total");
-
+                    // Prints a goodbye message
                     System.out.println("Thank you for using EmailSorter");
-
+                    // Exits the for-loop
                     break;
 
+                // If user input is 'n' or 'no'
                 }else if(answer.toLowerCase().contains("n") || (answer.toLowerCase().contains("no"))){
+                    // Prints a goodbye message
                     System.out.println("Thank you for using EmailSorter");
+                    // Exits the for-loop
                     break;
+
+                // If user input is not 'yes','y','n' or 'no', it gives them 3 extra chances for a correct input
                 }else{
+                    // Prints a notification for the user and shows them how many tries they have left
                     System.out.println("INCORRECT INPUT, TRY AGAIN " + checker + "/3");
+                    // Prints out a message if the user would like to print total amount of emails from the entire day
                     System.out.println("Would you like to print total emails sorted from the entire day? Y/N");
+                    //asks user for an input 'yes', 'y', 'n' or 'no'
                     answer = input.next();
+
+                    // If the user had 3 incorrect inputs
                     if(checker==3){
-                        System.out.println("Too many wrong inputs.");
+                        // Prints a message to notify user of too wrong inputs
+                        System.err.println("Too many wrong inputs!");
+                        // Exits the for-loop
                         break;
                     }
                 }
