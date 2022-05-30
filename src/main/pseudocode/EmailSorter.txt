@@ -1,0 +1,156 @@
+Switchfully Pseudocode assignment by Ahmed Faqiri
+ 
+
+    Declare String[] Array emails = new String[length]
+	Declare String[] Array recruitment = new String[emails.length]
+	Declare String[] Array spam = new String[emails.length]
+	Declare String[] Array sales = new String[emails.length]
+	Declare String[] Array reception = new String[emails.length]
+	
+	Declare String answer
+	Declare Scanner input
+	Declare LocalTime currentTime = LocalTime.now
+	Declare LocalTime endOfTheDay = LocalTime.of(15, 30)
+	
+	Declare Integer recruitmentCounter = 0
+	Declare Integer spamCounter = 0
+	Declare Integer salesCounter = 0
+	Declare Integer receptionCounter = 0
+	
+	Declare Integer totalRecruitmentCounter = 0
+	Declare Integer totalSpamCounter = 0
+	Declare Integer totalSalesCounter = 0
+	Declare Integer totalReceptionCounter = 0
+	Declare Integer totalEmails = 0
+	
+	IF (emails.length > 0)
+	
+		FOR (forLoopCounter = 0 to emails.length)
+
+			IF (emails[forLoopCounter].toLowerCase.contains("promo") || emails[forLoopCounter].toLowerCase.contains("advertising"))
+
+				spam[spamCounter] = emails[forLoopCounter]
+
+				INCREMENT spamCounter
+
+				REMOVE forLoopCounter FROM emails
+
+			END IF
+
+			ELSE IF (emails[forLoopCounter].toLowerCase.contains("cv"))
+
+				recruitment[recruitmentCounter] = emails[forLoopCounter]
+
+				INCREMENT recruitmentCounter
+			
+				REMOVE forLoopCounter FROM emails
+
+			END ELSE IF    
+
+			ELSE IF (emails[forLoopCounter].toLowerCase.contains("proposal"))
+
+				sales[salesCounter] = emails[forLoopCounter]
+			
+				INCREMENT salesCounter
+
+				REMOVE forLoopCounter FROM emails
+
+			END ELSE IF
+		
+			ELSE
+
+				reception[receptionCounter] = emails[forLoopCounter]
+			
+				INCREMENT receptionCounter
+
+				REMOVE forLoopCounter FROM emails
+
+			END ELSE
+		
+		End FOR
+
+	END IF
+	
+	ELSE 
+	
+		PRINT "Email list cannot be empty"
+		
+		END
+	
+	END ELSE
+	
+	
+    PRINT "We have sorted "email.length" mails:"
+
+    PRINT recruitmentCounter" to recuitment"
+
+    PRINT spamCounter" to spam"
+
+    PRINT salesCounter" to sales"
+
+    PRINT receptionCounter" to reception"
+	
+	totalEmails = totalEmails + emails.length
+    totalRecruitmentCounter = totalRecruitmentCounter + recruitmentCounter
+    totalSpamCounter = totalSpamCounter + spamCounter
+    totalSalesCounter = totalSalesCounter + salesCounter
+    totalReceptionCounter = totalReceptionCounter + receptionCounter
+	
+	recruitmentCounter = 0
+    spamCounter = 0
+    salesCounter = 0
+    receptionCounter = 0
+	
+	IF (currentTime.isAfter(endOfTheDay))
+		
+		PRINT "Would you like to print total emails sorted from the entire day? Y/N"
+		
+		answer = input.next
+		
+		FOR (Integer checker = 0 to 4)
+		
+			IF (answer.toLowerCase.contains("y") || answer.toLowerCase.contains("yes")
+			
+				PRINT "We have sorted "totalEmails" mails in total:"
+
+				PRINT totalRecruitmentCounter" to recuitment in total"
+
+				PRINT totalSpamCounter" to spam in total"
+
+				PRINT totalSalesCounter" to sales in total"
+
+				PRINT totalReceptionCounter" to reception in total"
+				
+				PRINT "Thank you for using EmailSorter"
+				
+				EXIT
+				
+			END IF
+			
+			ELSE IF (answer.toLowerCase.contains("n") || answer.toLowerCase.contains("no")
+			
+				PRINT "Thank you for using EmailSorter"
+				
+				EXIT
+				
+			END ELSE IF
+			
+			ELSE
+			
+				PRINT "INCORRECT INPUT, TRY AGAIN " + checker + "/3"
+					
+				PRINT "Would you like to print total emails sorted from the entire day? Y/N"
+					
+				answer = input.next
+					
+				IF(checker == 3)
+				
+					PRINT "Too many wrong inputs!"
+					
+					EXIT
+					
+				END IF
+			END ELSE	
+		END FOR
+	END IF
+END
