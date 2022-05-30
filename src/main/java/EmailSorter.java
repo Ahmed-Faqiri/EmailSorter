@@ -34,7 +34,7 @@ public class EmailSorter {
         // Current Local Time of the user
         LocalTime currentTime = LocalTime.now();
         // The time SharkPark nears closing hours (the end of the day)
-        LocalTime endOfTheDay = LocalTime.of(15, 30);
+        LocalTime endOfTheDay = LocalTime.of(11, 30);
         // Scans keyboard inputs of the user
         Scanner input = new Scanner(System.in);
 
@@ -126,7 +126,7 @@ public class EmailSorter {
             answer = input.next();
 
             // For loop that lets the user retry their answer
-            for (int checker = 1; checker < 4; checker++) {
+            for (int checker = 0; checker < 3; checker++) {
                 // If user input to lowercase contains: 'yes' or 'y'
                 if (answer.toLowerCase().contains("y") || (answer.toLowerCase().contains("yes"))) {
 
@@ -162,7 +162,7 @@ public class EmailSorter {
                     answer = input.next();
 
                     // If the user had 3 incorrect inputs
-                    if (checker == 3) {
+                    if (checker == 2) {
 
                         // Prints a message to notify user of too wrong inputs
                         System.err.println("Too many wrong inputs!");
