@@ -35,7 +35,7 @@ public class EmailSorter {
         // Current Local Time of the user
         LocalTime currentTime = LocalTime.now();
         // The time SharkPark nears closing hours (the end of the day)
-        LocalTime endOfTheDay = LocalTime.of(11, 30);
+        LocalTime endOfTheDay = LocalTime.of(15, 30);
         // Scans keyboard inputs of the user
         Scanner input = new Scanner(System.in);
 
