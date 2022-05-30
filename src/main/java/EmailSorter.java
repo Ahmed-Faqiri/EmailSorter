@@ -48,7 +48,7 @@ public class EmailSorter {
         int salesCounter = 0;
         int receptionCounter = 0;
 
-        // keeps track of total
+        // Keeps track of total emails sorted for the entire day
         int totalRecruitmentCounter = 0;
         int totalSpamCounter = 0;
         int totalSalesCounter = 0;
