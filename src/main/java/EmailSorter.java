@@ -141,7 +141,7 @@ public class EmailSorter {
 
             // Prints out a message if the user would like to print total amount of emails from the entire day
             System.out.println("Would you like to print total emails sorted from the entire day? Y/N");
-            //asks user for an input 'yes', 'y', 'n' or 'no'
+            // Asks user for an input 'yes', 'y', 'n' or 'no'
             answer = input.next();
 
             // For loop that lets the user retry their answer
@@ -175,7 +175,7 @@ public class EmailSorter {
                     System.out.println("INCORRECT INPUT, TRY AGAIN " + checker + "/3");
                     // Prints out a message if the user would like to print total amount of emails from the entire day
                     System.out.println("Would you like to print total emails sorted from the entire day? Y/N");
-                    //asks user for an input 'yes', 'y', 'n' or 'no'
+                    // Asks user for an input 'yes', 'y', 'n' or 'no'
                     answer = input.next();
 
                     // If the user had 3 incorrect inputs
