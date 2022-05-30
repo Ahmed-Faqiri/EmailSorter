@@ -29,8 +29,7 @@ public class EmailSorter {
                 "Business proposal get in touch for more information. - business2@mail.com",
                 "Business proposal get in touch for more information. - business3@mail.com",
                 // Uncategorized emails
-                "How do I order a pair of socks? - jim1@mail.com"
-        };
+                "How do I order a pair of socks? - jim1@mail.com"};
 
         // Emails will get sent to the following arrays after sorting
         String[] recruitment = new String[emails.length];// Recruitment@parkshark.com
@@ -38,9 +37,13 @@ public class EmailSorter {
         String[] sales = new String[emails.length];      // Sales@parkshark.com
         String[] reception = new String[emails.length];  // Reception@parkshark.com
 
+        // Variable to assign user input to
         String answer;
+        // Current Local Time of the user
         LocalTime currentTime = LocalTime.now();
+        // The time SharkPark nears closing (end of the day)
         LocalTime endOfTheDay = LocalTime.of(15, 30);
+        // Scans keyboard inputs of the user
         Scanner input = new Scanner(System.in);
 
         // Keeps track of the number of emails sent to each array
@@ -71,7 +74,7 @@ public class EmailSorter {
                     // Deletes the email from the emails array after it has been sorted
                     emails = ArrayUtils.removeElement(emails, forLoopCounter);
 
-                    // Converts email to lowercase then checks if the email contains the word "cv"
+                // Converts email to lowercase then checks if the email contains the word "cv"
                 } else if (emails[forLoopCounter].toLowerCase().contains("cv")) {
 
                     // Recruitment email is added to the recruitment array
@@ -81,7 +84,7 @@ public class EmailSorter {
                     // Deletes the email from the emails array after it has been sorted
                     emails = ArrayUtils.removeElement(emails, forLoopCounter);
 
-                    // Converts email to lowercase then checks if the email contains the word "proposal"
+                // Converts email to lowercase then checks if the email contains the word "proposal"
                 } else if (emails[forLoopCounter].toLowerCase().contains("proposal")) {
 
                     // Sales email is added to the sales array
@@ -91,7 +94,7 @@ public class EmailSorter {
                     // Deletes the email from the emails array after it has been sorted
                     emails = ArrayUtils.removeElement(emails, forLoopCounter);
 
-                    // If the emails do not contain "promo", "advertising", "cv" and "proposal"
+                // If the emails do not contain "promo", "advertising", "cv" and "proposal"
                 } else {
 
                     // Reception email is added to the reception array
@@ -126,7 +129,7 @@ public class EmailSorter {
             salesCounter = 0;
             receptionCounter = 0;
 
-            // If the array list given is empty
+        // If the array list given is empty
         } else {
 
             // Prints an error message upon giving an empty list
@@ -145,7 +148,6 @@ public class EmailSorter {
 
             // For loop that lets the user retry their answer
             for (int checker = 0; checker < 4; checker++) {
-
                 // If user input to lowercase contains 'yes' or 'y'
                 if (answer.toLowerCase().contains("y") || (answer.toLowerCase().contains("yes"))) {
 
@@ -160,7 +162,7 @@ public class EmailSorter {
                     // Exits the for-loop
                     break;
 
-                    // If user input to lowercase contains 'n' or 'no'
+                 // If user input to lowercase contains 'n' or 'no'
                 } else if (answer.toLowerCase().contains("n") || (answer.toLowerCase().contains("no"))) {
 
                     // Prints a goodbye message
@@ -168,7 +170,7 @@ public class EmailSorter {
                     // Exits the for-loop
                     break;
 
-                    // If user input is not 'yes','y','n' or 'no', it gives them 3 extra chances for a correct input
+                // If user input is not 'yes','y','n' or 'no', it gives them 3 extra chances for a correct input
                 } else {
 
                     // Prints a notification for the user and shows them how many tries they have left
