@@ -1,5 +1,4 @@
 import org.apache.commons.lang3.ArrayUtils;
-
 import java.time.LocalTime;
 import java.util.Scanner;
 
@@ -136,7 +135,6 @@ public class EmailSorter {
             System.err.println("Email list cannot be empty!");
             // Forces program to stop
             System.exit(-1);
-
 
         }// If the current local time is after 15:30 and before 8:00 AM
         if (currentTime.isAfter(endOfTheDay)) {
