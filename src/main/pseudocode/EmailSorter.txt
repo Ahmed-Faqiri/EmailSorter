@@ -79,7 +79,6 @@ Switchfully Pseudocode assignment by Ahmed Faqiri
 	
 	END ELSE
 	
-	
     PRINT "We have sorted "email.length" mails:"
 
     PRINT recruitmentCounter" to recuitment"
