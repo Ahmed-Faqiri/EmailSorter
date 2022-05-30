@@ -36,10 +36,10 @@ public class EmailSorter {
         String[] spam = new String[emails.length];       // Spam@parkshark.com
         String[] sales = new String[emails.length];      // Sales@parkshark.com
         String[] reception = new String[emails.length];  // Reception@parkshark.com
+
         String answer;
         LocalTime currentTime = LocalTime.now();
-        LocalTime endOfTheDay = LocalTime.of(9, 0);
-        LocalTime startOfTheDay = LocalTime.of(8,0);
+        LocalTime endOfTheDay = LocalTime.of(15, 30);
         Scanner input = new Scanner(System.in);
 
         // Keeps track of the number of emails sent to each array
@@ -121,6 +121,7 @@ public class EmailSorter {
         }
         // If the array list given is empty
         else {
+
             // Prints an error message upon giving an empty list
             System.err.println("Email list cannot be empty!");
             // Forces program to stop
@@ -128,6 +129,7 @@ public class EmailSorter {
         }
         // If the current local time is after 15:30 and before 8:00 AM
         if (currentTime.isAfter(endOfTheDay)) {
+
             // Prints out a message if the user would like to print total amount of emails from the entire day
             System.out.println("Would you like to print total emails sorted from the entire day? Y/N");
             //asks user for an input 'yes', 'y', 'n' or 'no'
@@ -150,8 +152,9 @@ public class EmailSorter {
                     // Exits the for-loop
                     break;
 
-                // If user input is 'n' or 'no'
+                // If user input to lowercase contains 'n' or 'no'
                 }else if(answer.toLowerCase().contains("n") || (answer.toLowerCase().contains("no"))){
+
                     // Prints a goodbye message
                     System.out.println("Thank you for using EmailSorter");
                     // Exits the for-loop
@@ -159,6 +162,7 @@ public class EmailSorter {
 
                 // If user input is not 'yes','y','n' or 'no', it gives them 3 extra chances for a correct input
                 }else{
+
                     // Prints a notification for the user and shows them how many tries they have left
                     System.out.println("INCORRECT INPUT, TRY AGAIN " + checker + "/3");
                     // Prints out a message if the user would like to print total amount of emails from the entire day
@@ -168,6 +172,7 @@ public class EmailSorter {
 
                     // If the user had 3 incorrect inputs
                     if(checker==3){
+
                         // Prints a message to notify user of too wrong inputs
                         System.err.println("Too many wrong inputs!");
                         // Exits the for-loop
