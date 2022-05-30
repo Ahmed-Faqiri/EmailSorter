@@ -1,5 +1,4 @@
 import org.apache.commons.lang3.ArrayUtils;
-
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -34,8 +33,8 @@ public class EmailSorter {
         String answer;
         // Current Local Time of the user
         LocalTime currentTime = LocalTime.now();
-        // The time SharkPark nears closing (the end of the day)
-        LocalTime endOfTheDay = LocalTime.of(11, 10);
+        // The time SharkPark nears closing hours (the end of the day)
+        LocalTime endOfTheDay = LocalTime.of(15, 30);
         // Scans keyboard inputs of the user
         Scanner input = new Scanner(System.in);
 
@@ -44,7 +43,7 @@ public class EmailSorter {
         int spamCounter = 0;
         int salesCounter = 0;
         int receptionCounter = 0;
-        int totalEmails = 0;
+        int totalEmails;
 
         // If the email array is not empty, sort the emails
         if (emails.length > 0) {
