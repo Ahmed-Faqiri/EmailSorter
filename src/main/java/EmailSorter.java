@@ -106,13 +106,13 @@ public class EmailSorter {
             }
             // Prints the total number of emails and the number of emails in each category
             System.out.println("We have sorted " + emails.length + " mails:");
-            // Recruitment@parkshark.com
+            // Prints out how many emails were sent to Recruitment@parkshark.com
             System.out.println(recruitmentCounter + "  to recruitment");
-            // Spam@parkshark.com
+            // Prints out how many emails were sent to Spam@parkshark.com
             System.out.println(spamCounter + " to spam");
-            // Sales@parkshark.com
+            // Prints out how many emails were sent to Sales@parkshark.com
             System.out.println(salesCounter + "  to sales");
-            // Reception@parkshark.com
+            // Prints out how many emails were sent to Reception@parkshark.com
             System.out.println(receptionCounter + "  to reception");
 
             // Saves how many emails were sorted in total and in each category
@@ -136,17 +136,17 @@ public class EmailSorter {
             // Forces program to stop
             System.exit(-1);
 
-        }// If the current local time is after 15:30 and before 8:00 AM
+        }// If the current local time is after 15:30
         if (currentTime.isAfter(endOfTheDay)) {
 
             // Prints out a message if the user would like to print total amount of emails from the entire day
             System.out.println("Would you like to print total emails sorted from the entire day? Y/N");
-            // Asks user for an input 'yes', 'y', 'n' or 'no'
+            // Asks user for an input: 'yes', 'y', 'n' or 'no'
             answer = input.next();
 
             // For loop that lets the user retry their answer
             for (int checker = 0; checker < 4; checker++) {
-                // If user input to lowercase contains 'yes' or 'y'
+                // If user input to lowercase contains: 'yes' or 'y'
                 if (answer.toLowerCase().contains("y") || (answer.toLowerCase().contains("yes"))) {
 
                     // Prints the total number of emails from the entire day
@@ -160,7 +160,7 @@ public class EmailSorter {
                     // Exits the for-loop
                     break;
 
-                 // If user input to lowercase contains 'n' or 'no'
+                 // If user input to lowercase contains: 'n' or 'no'
                 } else if (answer.toLowerCase().contains("n") || (answer.toLowerCase().contains("no"))) {
 
                     // Prints a goodbye message
@@ -168,14 +168,14 @@ public class EmailSorter {
                     // Exits the for-loop
                     break;
 
-                // If user input is not 'yes','y','n' or 'no', it gives them 3 extra chances for a correct input
+                // If user input is not: 'yes','y','n' or 'no', it gives them 3 extra chances for a correct input
                 } else {
 
                     // Prints a notification for the user and shows them how many tries they have left
                     System.out.println("INCORRECT INPUT, TRY AGAIN " + checker + "/3");
                     // Prints out a message if the user would like to print total amount of emails from the entire day
                     System.out.println("Would you like to print total emails sorted from the entire day? Y/N");
-                    // Asks user for an input 'yes', 'y', 'n' or 'no'
+                    // Asks user for an input: 'yes', 'y', 'n' or 'no'
                     answer = input.next();
 
                     // If the user had 3 incorrect inputs
