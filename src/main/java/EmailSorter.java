@@ -30,8 +30,8 @@ public class EmailSorter {
                 "Business proposal get in touch for more information. - business3@mail.com",
                 // Uncategorized emails
                 "How do I order a pair of socks? - jim1@mail.com"
-
         };
+
         // Emails will get sent to the following arrays after sorting
         String[] recruitment = new String[emails.length];// Recruitment@parkshark.com
         String[] spam = new String[emails.length];       // Spam@parkshark.com
@@ -125,16 +125,17 @@ public class EmailSorter {
             spamCounter = 0;
             salesCounter = 0;
             receptionCounter = 0;
-        }
-        // If the array list given is empty
-        else {
+
+            // If the array list given is empty
+        } else {
 
             // Prints an error message upon giving an empty list
             System.err.println("Email list cannot be empty!");
             // Forces program to stop
             System.exit(-1);
-        }
-        // If the current local time is after 15:30 and before 8:00 AM
+
+
+        }// If the current local time is after 15:30 and before 8:00 AM
         if (currentTime.isAfter(endOfTheDay)) {
 
             // Prints out a message if the user would like to print total amount of emails from the entire day
