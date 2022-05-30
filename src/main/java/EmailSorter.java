@@ -40,7 +40,7 @@ public class EmailSorter {
         String answer;
         // Current Local Time of the user
         LocalTime currentTime = LocalTime.now();
-        // The time SharkPark nears closing (end of the day)
+        // The time SharkPark nears closing (the end of the day)
         LocalTime endOfTheDay = LocalTime.of(15, 30);
         // Scans keyboard inputs of the user
         Scanner input = new Scanner(System.in);
@@ -172,7 +172,7 @@ public class EmailSorter {
                 } else {
 
                     // Prints a notification for the user and shows them how many tries they have left
-                    System.out.println("INCORRECT INPUT, TRY AGAIN " + checker + "/3");
+                    System.err.println("INCORRECT INPUT, TRY AGAIN " + checker + "/3");
                     // Prints out a message if the user would like to print total amount of emails from the entire day
                     System.out.println("Would you like to print total emails sorted from the entire day? Y/N");
                     // Asks user for an input: 'yes', 'y', 'n' or 'no'
