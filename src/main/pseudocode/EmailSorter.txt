@@ -1,19 +1,16 @@
 Switchfully Pseudocode assignment by Ahmed Faqiri
  
 
-
     Declare String[] Array emails = new String[length]
 	Declare String[] Array recruitment = new String[emails.length]
 	Declare String[] Array spam = new String[emails.length]
 	Declare String[] Array sales = new String[emails.length]
 	Declare String[] Array reception = new String[emails.length]
 	
-	
 	Declare String answer
 	Declare Scanner input
 	Declare LocalTime currentTime = LocalTime.now
 	Declare LocalTime endOfTheDay = LocalTime.of(15, 30)
-	
 	
 	Declare Integer recruitmentCounter = 0
 	Declare Integer spamCounter = 0
@@ -25,8 +22,6 @@ Switchfully Pseudocode assignment by Ahmed Faqiri
 	Declare Integer totalSalesCounter = 0
 	Declare Integer totalReceptionCounter = 0
 	Declare Integer totalEmails = 0
-	
-	
 	
 	IF (emails.length > 0)
 	
