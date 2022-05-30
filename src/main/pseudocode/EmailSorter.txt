@@ -88,7 +88,7 @@ Switchfully Pseudocode assignment by Ahmed Faqiri
 		
 		answer = input.next
 		
-		FOR (Integer checker = 1 to 4)
+		FOR (Integer checker = 0 to 3)
 		
 			IF (answer.toLowerCase.contains("y") || answer.toLowerCase.contains("yes"))
 			
@@ -122,7 +122,7 @@ Switchfully Pseudocode assignment by Ahmed Faqiri
 					
 				answer = input.next
 					
-				IF(checker == 3)
+				IF(checker == 2)
 				
 					PRINT "Too many wrong inputs!"
 					
