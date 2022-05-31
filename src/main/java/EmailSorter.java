@@ -33,7 +33,7 @@ public class EmailSorter {
         String answer;
         // Current Local Time of the user
         LocalTime currentTime = LocalTime.now();
-        // The time parkshark nears closing hours (the end of the day)
+        // The time parkshark nears closing hours (hour: 15, minute:30) (the end of the day)
         LocalTime endOfTheDay = LocalTime.of(15, 30);
         // Scans keyboard inputs of the user
         Scanner input = new Scanner(System.in);
