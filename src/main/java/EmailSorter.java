@@ -1,5 +1,4 @@
 import org.apache.commons.lang3.ArrayUtils;
-
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
