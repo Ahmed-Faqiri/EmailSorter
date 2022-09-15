@@ -20,18 +20,8 @@ Switchfully Pseudocode assignment by Ahmed Faqiri
 	IF (emails.length > 0)
 	
 		FOR (forLoopCounter = 0 to emails.length)
-
-			IF (emails[forLoopCounter].toLowerCase.contains("promo") || emails[forLoopCounter].toLowerCase.contains("advertising"))
-
-				spam.add(emails[forLoopCounter])
-
-				INCREMENT spamCounter
-
-				REMOVE forLoopCounter FROM emails
-
-			END IF
-			
-			ELSE IF (emails[forLoopCounter].toLowerCase.contains("cv"))
+		
+			IF (emails[forLoopCounter].toLowerCase.contains("cv"))
 
 				recruitmentspam.add(emails[forLoopCounter])
 
@@ -39,7 +29,15 @@ Switchfully Pseudocode assignment by Ahmed Faqiri
 			
 				REMOVE forLoopCounter FROM emails
 
-			END ELSE IF 
+			ELSE IF (emails[forLoopCounter].toLowerCase.contains("promo") || emails[forLoopCounter].toLowerCase.contains("advertising"))
+
+				spam.add(emails[forLoopCounter])
+
+				INCREMENT spamCounter
+
+				REMOVE forLoopCounter FROM emails
+
+			END ELSE IF
 			
 			ELSE IF (emails[forLoopCounter].toLowerCase.contains("proposal"))
 
@@ -77,7 +75,7 @@ Switchfully Pseudocode assignment by Ahmed Faqiri
     PRINT salesCounter + " to sales"
     PRINT receptionCounter + " to reception"
 	
-	recruitmentCounter = 0
+    recruitmentCounter = 0
     spamCounter = 0
     salesCounter = 0
     receptionCounter = 0
