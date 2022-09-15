@@ -1,6 +1,6 @@
 Switchfully Pseudocode assignment by Ahmed Faqiri
  
-    Declare String[] Array emails
+   	Declare String[] Array emails
 	Declare ArrayList<String> recruitment
 	Declare ArrayList<String> spam
 	Declare ArrayList<String> sales
@@ -9,7 +9,7 @@ Switchfully Pseudocode assignment by Ahmed Faqiri
 	Declare String answer
 	Declare Scanner input
 	Declare LocalTime currentTime = LocalTime.now
-	Declare LocalTime endOfTheDay = LocalTime.of(15, 30)
+	Declare LocalTime endOfTheDay = LocalTime.of(17, 00)
 	
 	Declare Integer recruitmentCounter = 0
 	Declare Integer spamCounter = 0
