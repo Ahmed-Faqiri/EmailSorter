@@ -58,7 +58,7 @@ Switchfully Pseudocode assignment by Ahmed Faqiri
 				REMOVE forLoopCounter FROM emails
 
 			END ELSE
-		End FOR
+		END FOR
 	END IF
 	
 	ELSE 
